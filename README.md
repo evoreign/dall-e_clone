@@ -31,7 +31,8 @@ A MERN based website that generate image using open AI DALL-E API
 | `size`      | `string` | **Required**. size of the image, 256, 512, or 1024 |
 | `response format`      | `string` | **Required**. whats the returns |
 
-
+## Latest update
+ - Implement Upvote and downvote interface and profile pages
 
 ## Acknowledgements
 
@@ -43,13 +44,6 @@ A MERN based website that generate image using open AI DALL-E API
 
 - Add user authentication
 
-- Add like function to each post
-
 - implement credit system so i can release it to public without going broke
 
 - upscale the image so user can generate 256 from open ai and upscale it to 512 for tiny bit of credit or generate 1024 to what ever they want
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/main

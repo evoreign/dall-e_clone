@@ -48,5 +48,8 @@ A MERN based website that generate image using open AI DALL-E API
 - implement credit system so i can release it to public without going broke
 
 - upscale the image so user can generate 256 from open ai and upscale it to 512 for tiny bit of credit or generate 1024 to what ever they want
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/main

@@ -16,7 +16,7 @@ const App = () => {
   </div>
   <div className="flex items-center">
     <Link to="/profiles">
-      <img src="https://res.cloudinary.com/dfqziqcfa/image/upload/v1678270624/samples/animals/kitten-playing.gif" alt="Profile image" className="w-20 h-20 rounded-full mr-4" />
+      <img src="https://res.cloudinary.com/dfqziqcfa/image/upload/v1678270632/cld-sample.jpg" alt="Profile image" className="w-20 h-20 rounded-full mr-4" />
     </Link>
     <Link to="/create-post" className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md">Create new post</Link>
   </div>

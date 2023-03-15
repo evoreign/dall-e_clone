@@ -2,15 +2,41 @@ import React, { useState } from 'react';
 import { download } from '../assets';
 import { downloadImage } from '../utils';
 
-const Card = ({ _id, name, prompt, photo }) => {
-  const [vote, setVote] = useState(0);
+const Card = ({ _id, name, prompt, photo, votes }) => {
+  const [vote, setVote] = useState(votes);
 
   const handleUpvote = () => {
-    setVote(vote === 1 ? 0 : 1);
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: _id, vote: 'upvote' })
+    };
+  
+    fetch('http://localhost:8080/api/v1/post/vote', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        // update the vote state with the new value
+        setVote(data.data.votes);
+        console(data.data.votes)
+      })
+      .catch(error => console.log(error));
   };
 
   const handleDownvote = () => {
-    setVote(vote === -1 ? 0 : -1);
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: _id, vote: 'downvote' })
+    };
+  
+    fetch('http://localhost:8080/api/v1/post/vote', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        // update the vote state with the new value
+        setVote(data.data.votes);
+        console.log(data.data.votes);
+      })
+      .catch(error => console.log(error));
   };
 
   return (

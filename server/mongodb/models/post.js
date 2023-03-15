@@ -4,6 +4,8 @@ const Post = new mongoose.Schema({
   name: { type: String, required: true },
   prompt: { type: String, required: true },
   photo: { type: String, required: true },
+  votes: { type: Number, default: 0, required: true },
+
 });
 
 const PostSchema = mongoose.model('Post', Post);

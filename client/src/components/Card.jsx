@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import { download } from '../assets';
 import { downloadImage } from '../utils';
-
+import Modal from './modal';
 const Card = ({ _id, name, prompt, photo, votes }) => {
   const [vote, setVote] = useState(votes);
 
+  // handle modal for img popup
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   const handleUpvote = () => {
+    if (vote > 0) return;
     const requestOptions = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -17,12 +30,13 @@ const Card = ({ _id, name, prompt, photo, votes }) => {
       .then(data => {
         // update the vote state with the new value
         setVote(data.data.votes);
-        console(data.data.votes)
+        console.log(data.data.votes)
       })
       .catch(error => console.log(error));
   };
 
   const handleDownvote = () => {
+    if (vote < 0) return;
     const requestOptions = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -41,12 +55,15 @@ const Card = ({ _id, name, prompt, photo, votes }) => {
 
   return (
     <div className="rounded-xl group relative 
-    shadow-card hover:shadow-cardhover card">
+    shadow-card hover:shadow-cardhover card"
+    >
       <img
         className="w-full h-auto object-cover rounded-xl"
         src={photo}
         alt={prompt}
+        onClick={openModal}
       />
+      <Modal isOpen={modalOpen} onClose={closeModal} imageSrc={photo} />
       <div className="group-hover:flex flex-col max-h-[94.5%] 
       hidden absolute bottom-0 left-0 right-0 bg-[#10131f] 
       m-2 p-4 rounded-md">

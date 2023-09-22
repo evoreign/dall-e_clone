@@ -54,9 +54,8 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/create-post' element={<CreatePost />} />
-            <Route path='/sign-in/*' element={<SignIn routing='path' path='/sign-in' appearance={{elements:{rootBox:
-              "flex items-center justify-center h-full",}}}/> } />
-            <Route path='/sign-up/*' element={<SignUp routing='path' path='/sign-up' />} />
+            <Route path='/sign-in/*' element={<div className='w-max mx-auto mt-12'><SignIn routing='path' path='/sign-in' signUpUrl='/sign-up'/></div> } />
+            <Route path='/sign-up/*' element={<div className='w-max mx-auto mt-12'><SignUp routing='path' path='/sign-up' signInUrl='/sign-in'/></div>} />
           </Routes>
         </main>
         

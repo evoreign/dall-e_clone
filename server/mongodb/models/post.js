@@ -5,7 +5,7 @@ const Post = new mongoose.Schema({
   prompt: { type: String, required: true },
   photo: { type: String, required: true },
   votes: { type: Number, default: 0, required: true },
-
+  author_img: { type: String, required: true },
 });
 
 const PostSchema = mongoose.model('Post', Post);

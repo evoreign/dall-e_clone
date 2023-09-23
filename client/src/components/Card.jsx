@@ -61,6 +61,7 @@ const Card = ({ _id, name, prompt, photo, votes }) => {
         className="w-full h-auto object-cover rounded-xl"
         src={photo}
         alt={prompt}
+        loading='lazy'
         onClick={openModal}
       />
       <Modal isOpen={modalOpen} onClose={closeModal} imageSrc={photo} />

@@ -33,12 +33,13 @@ const App = () => {
           </div>
           <div className='flex items-center'>
             <SignedIn>
-              <Link
-                to='/create-post'
-                className='font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md'
-              >
-                Create new post
-              </Link>
+            <Link
+              to='/create-post'
+              className='font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md mr-4 hover:bg-blue-700 hover:shadow-md transition duration-300 ease-in-out'
+            >
+              Create new post
+            </Link>
+
               <UserButton />
             </SignedIn>
             
@@ -49,6 +50,7 @@ const App = () => {
             </SignedOut>
           </div>
         </header>
+
  
         <main className='sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]'>
           <Routes>

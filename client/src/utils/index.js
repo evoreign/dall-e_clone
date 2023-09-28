@@ -24,6 +24,7 @@ export async function handleUpvotes(id, setVotes) {
     const response = await axios.put('localhost:8080/api/v1/post/vote', {
       id,
       vote: 'upvote',
+      
     });
     const updatedPost = response.data.data;
     setVotes(updatedPost.votes);
@@ -31,7 +32,19 @@ export async function handleUpvotes(id, setVotes) {
     console.error(error);
   }
 }
-
+// export async function handleUpvotes(id, setVotes, userid) {
+//   try {
+//     const response = await axios.put('localhost:8080/api/v1/post/vote', {
+//       id,
+//       vote: 'upvote',
+//       upvotes: userid,
+//     });
+//     const updatedPost = response.data.data;
+//     setVotes(updatedPost.votes);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 export async function handleDownvotes(id, setVotes) {
   try {
@@ -45,6 +58,19 @@ export async function handleDownvotes(id, setVotes) {
     console.error(error);
   }
 }
+// export async function handleDownvotes(id, setVotes, userid) {
+//   try {
+//     const response = await axios.put('localhost:8080/api/v1/post/vote', {
+//       id,
+//       vote: 'downvote',
+//       downvotes: userid,
+//     });
+//     const updatedPost = response.data.data;
+//     setVotes(updatedPost.votes);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 // export async function getVoteCount(id) {
 //   try {

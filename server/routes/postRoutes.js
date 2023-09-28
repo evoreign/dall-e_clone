@@ -54,8 +54,10 @@ router.route('/vote').put(async (req, res) => {
 
     if (vote === 'upvote') {
       post.votes += 1;
+      // post.upvotes.push(userid);
     } else if (vote === 'downvote') {
       post.votes -= 1;
+      // post.downvotes.push(userid);
     } else {
       return res.status(400).json({ success: false, message: 'Invalid vote type' });
     }

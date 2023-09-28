@@ -13,7 +13,10 @@ const CreatePost = () => {
     name: useUser().user.fullName,
     prompt: '',
     photo: '',
-    author_img: useUser().user.imageUrl, 
+    author_img: useUser().user.imageUrl,
+    // votes:0,
+    // upvotes: '',
+    // downvotes: '',
   });
 
   const [generatingImg, setGeneratingImg] = useState(false);
